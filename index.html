@@ -313,7 +313,7 @@
         <div class="section-label">Get Started</div>
         <h2>Ready to Cut Your<br />Labor Costs?</h2>
         <p>Tell us about your space. We'll follow up within 24 hours with a custom quote and deployment plan — no commitment required.</p>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" action="https://formspree.io/f/lemonzhong001@163.com" method="POST">
           <div class="form-row">
             <input type="text" placeholder="Your Name" required />
             <input type="email" placeholder="Work Email" required />
@@ -342,11 +342,10 @@
             <option>Not Sure — Want Advice</option>
           </select>
           <textarea placeholder="Anything else? (number of floors, approximate sq footage, current labor costs, etc.)" rows="4"></textarea>
+          <input type="hidden" name="_subject" value="New Lambda Robotics Service Request" />
+          <input type="hidden" name="_next" value="https://nz-liam-zhong.github.io/Lambda-Robotics/?sent=true" />
           <button type="submit" class="btn-primary">Get My Free Quote →</button>
         </form>
-        <div id="form-success" class="form-success" style="display:none">
-          ✅ Got it! We'll send you a custom quote within 24 hours.
-        </div>
       </div>
     </div>
   </section>
@@ -379,7 +378,7 @@
         <div class="footer-col">
           <div class="footer-col-title">Contact</div>
           <a href="#contact">Get a Quote</a>
-          <a href="mailto:hello@lambdarobotics.ai">hello@lambdarobotics.ai</a>
+          <a href="mailto:lemonzhong001@163.com">lemonzhong001@163.com</a>
           <a href="#">Philadelphia, PA</a>
         </div>
       </div>
