@@ -24,16 +24,10 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.card, .step, .team-card').forEach(el => {
+document.querySelectorAll('.card, .step').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
 });
 
-// Contact form
-function handleSubmit(e) {
-  e.preventDefault();
-  document.querySelector('.contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-}
