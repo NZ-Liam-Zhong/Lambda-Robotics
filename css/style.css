@@ -776,3 +776,48 @@ footer {
   .step-connector { margin-left: 20px; }
   .robot-screen, .operator-card { width: 280px; }
 }
+
+/* ── Public minimal (no disclosed details) ── */
+.public-minimal .nav-inner--center {
+  justify-content: center;
+}
+
+.public-minimal .nav-links,
+.public-minimal .hamburger {
+  display: none !important;
+}
+
+.hero--minimal {
+  min-height: calc(100vh - 120px);
+  max-width: none;
+  padding: 120px 24px 48px;
+  justify-content: center;
+}
+
+.hero-content--center {
+  display: flex;
+  justify-content: center;
+  flex: none;
+  width: 100%;
+}
+
+.robot-card--solo {
+  margin: 0 auto;
+}
+
+.robot-card--solo .robot-screen {
+  width: 280px;
+}
+
+.robot-card--solo .robot-body {
+  margin-bottom: 0;
+}
+
+.footer-minimal {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+}
