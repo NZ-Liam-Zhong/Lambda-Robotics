@@ -7,7 +7,8 @@
   <meta name="description" content="Autonomous robotics for the physical world." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" /></noscript>
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{
@@ -21,12 +22,13 @@
       --border-mid:rgba(24,23,20,0.12);
     }
     html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--ink);font-family:'Geist',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");opacity:0.45}
 
     nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:0.5px solid var(--border);background:rgba(237,233,227,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
     nav .inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;height:58px;display:flex;align-items:center;justify-content:space-between}
     .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-mark{font-family:'EB Garamond',Georgia,serif;font-size:20px;line-height:1;color:var(--ink)}
     .logo-text{font-size:14px;font-weight:400;letter-spacing:0.03em;color:var(--ink)}
     .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
     .nav-links a{font-size:11px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;transition:color .2s}
@@ -40,23 +42,23 @@
     .vr-r{right:calc(50% - 300px)}
     .hero-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:2}
 
-    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s ease forwards .15s}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:2.5rem;animation:fadeUp .7s ease both .15s}
     .pulse-dot{width:5px;height:5px;border-radius:50%;background:var(--ink-mid);animation:blink 3.5s ease-in-out infinite}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
     .eyebrow span{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim)}
 
-    h1{font-family:'EB Garamond',serif;font-size:clamp(2.6rem,4.5vw,3.8rem);font-weight:400;line-height:1.06;letter-spacing:-.015em;color:var(--ink);margin-bottom:1.75rem;opacity:0;animation:fadeUp .7s ease forwards .3s}
+    h1{font-family:'EB Garamond',Georgia,'Times New Roman',serif;font-size:clamp(2.6rem,4.5vw,3.8rem);font-weight:400;line-height:1.06;letter-spacing:-.015em;color:var(--ink);margin-bottom:1.75rem;animation:fadeUp .7s ease both .3s}
     h1 em{font-style:italic;color:var(--ink-mid)}
-    .hero-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--ink-mid);max-width:380px;margin-bottom:2.75rem;opacity:0;animation:fadeUp .7s ease forwards .45s}
-    .cta-row{display:flex;align-items:center;gap:2rem;opacity:0;animation:fadeUp .7s ease forwards .6s}
-    .btn-primary{font-family:'Geist',sans-serif;font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--bg);background:var(--ink);border:none;padding:13px 32px;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s}
+    .hero-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--ink-mid);max-width:380px;margin-bottom:2.75rem;animation:fadeUp .7s ease both .45s}
+    .cta-row{display:flex;align-items:center;gap:2rem;animation:fadeUp .7s ease both .6s}
+    .btn-primary{font-family:inherit;font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--bg);background:var(--ink);border:none;padding:13px 32px;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s}
     .btn-primary:hover{opacity:.82;transform:translateY(-1px)}
-    .btn-text{font-family:'Geist',sans-serif;font-size:11px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .2s;background:none;border:none;cursor:pointer}
+    .btn-text{font-family:inherit;font-size:11px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .2s;background:none;border:none;cursor:pointer}
     .btn-text::after{content:'→';transition:transform .2s}
     .btn-text:hover{color:var(--ink-mid)}
     .btn-text:hover::after{transform:translateX(4px)}
 
-    .hero-visual{display:flex;align-items:center;justify-content:center;opacity:0;animation:fadeIn 1.2s ease forwards .75s}
+    .hero-visual{display:flex;align-items:center;justify-content:center;animation:fadeIn 1.2s ease both .75s}
     .ring-wrap{position:relative;width:260px;height:260px}
     .ring{position:absolute;border-radius:50%;border:0.5px solid var(--border-mid);top:50%;left:50%;transform:translate(-50%,-50%)}
     .ring:nth-child(1){width:260px;height:260px;animation:spin 24s linear infinite}
@@ -65,7 +67,7 @@
     .ring-dot{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--ink-mid);top:-2px;left:50%;transform:translateX(-50%)}
     .ring:nth-child(2) .ring-dot{background:var(--ink-dim)}
     @keyframes spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-    .ring-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .ring-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'EB Garamond',Georgia,serif;font-size:2.4rem;color:var(--ink);opacity:.12;line-height:1}
 
     .stats{border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);background:var(--bg2);position:relative;z-index:2}
     .stats-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:repeat(4,1fr)}
@@ -101,8 +103,14 @@
     .foot-links a:hover{color:var(--ink-mid)}
     .foot-copy{font-size:10px;color:var(--ink-dim);letter-spacing:.06em}
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes fadeUp{from{opacity:.2;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:.2}to{opacity:1}}
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .hero-desc, .cta-row, .hero-visual { animation: none; }
+      .ring { animation: none !important; }
+      .pulse-dot { animation: none !important; }
+    }
 
     @media(max-width:768px){
       .hero-inner{grid-template-columns:1fr}
@@ -120,13 +128,12 @@
 <!-- NAV -->
 <nav>
   <div class="inner">
-    <a href="/" class="logo">
-      <img src="logo.png" alt="Lambda Robotics" style="width:22px;height:auto;display:block">
+    <a href="#" class="logo">
+      <span class="logo-mark" aria-hidden="true">λ</span>
       <span class="logo-text">Lambda Robotics</span>
     </a>
     <ul class="nav-links">
       <li><a href="#approach">Approach</a></li>
-      <li><a href="#company">Company</a></li>
       <li><a href="mailto:hello@lambdarobotics.com" class="nav-cta">Request Access</a></li>
     </ul>
   </div>
@@ -162,9 +169,7 @@
         <div class="ring"><div class="ring-dot"></div></div>
         <div class="ring"><div class="ring-dot"></div></div>
         <div class="ring"></div>
-        <div class="ring-center">
-          <img src="logo.png" alt="" style="width:48px;height:auto;opacity:0.15">
-        </div>
+        <div class="ring-center" aria-hidden="true">λ</div>
       </div>
     </div>
   </div>
@@ -211,8 +216,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="inner">
-    <a href="/" class="foot-logo">
-      <img src="logo.png" alt="" style="width:16px;height:auto;opacity:0.5">
+    <a href="#" class="foot-logo">
+      <span class="logo-mark" aria-hidden="true">λ</span>
       <span>Lambda Robotics</span>
     </a>
     <ul class="foot-links">
