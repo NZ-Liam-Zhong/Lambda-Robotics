@@ -65,16 +65,15 @@ if (canvas) {
   draw();
 }
 
-// Mouse parallax on orbs
-const orbs = document.querySelectorAll('.orb');
-if (orbs.length) {
-  let mx = 0, my = 0;
+// Subtle tilt on showcase
+const showcase = document.querySelector('.showcase');
+if (showcase && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.addEventListener('mousemove', (e) => {
-    mx = (e.clientX / window.innerWidth - 0.5) * 2;
-    my = (e.clientY / window.innerHeight - 0.5) * 2;
-    orbs.forEach((orb, i) => {
-      const strength = (i + 1) * 8;
-      orb.style.transform = `translate(${mx * strength}px, ${my * strength}px)`;
-    });
+    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+    showcase.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${-y}deg)`;
+  });
+  document.addEventListener('mouseleave', () => {
+    showcase.style.transform = '';
   });
 }

@@ -1001,19 +1001,6 @@ footer {
   to { transform: rotate(360deg); }
 }
 
-.orbit-dot {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--blue-light);
-  box-shadow: 0 0 14px rgba(20, 184, 166, 0.6);
-}
-
-.orbit-dot-1 { top: 4%; left: 50%; margin-left: -4px; animation: orbit-spin 20s linear infinite; transform-origin: 4px 166px; }
-.orbit-dot-2 { bottom: 12%; right: 8%; animation: orbit-spin 14s linear infinite reverse; }
-.orbit-dot-3 { top: 42%; left: 6%; animation: dot-pulse 2.5s ease-in-out infinite; }
-
 .showcase-glass {
   position: relative;
   width: 72%;
@@ -1135,7 +1122,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orb, .orbit, .orbit-dot, .mark-ring, .glass-shine, .scan-beam,
+  .orb, .orbit, .mark-ring, .glass-shine, .scan-beam,
   .signal-bars span, .robot-body--hero svg, .divider-dot {
     animation: none !important;
   }
