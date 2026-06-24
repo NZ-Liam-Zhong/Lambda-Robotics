@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lambda Robotics</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <meta name="description" content="Autonomous robotics for the physical world." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +12,7 @@
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{
-      --bg:#ede9e3;
+      --bg:#ffffff;
       --bg2:#e6e2db;
       --bg3:#dedad2;
       --ink:#181714;
@@ -24,7 +25,7 @@
     body{background:var(--bg);color:var(--ink);font-family:'Geist',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");opacity:0.45}
 
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:0.5px solid var(--border);background:rgba(237,233,227,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
     nav .inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;height:58px;display:flex;align-items:center;justify-content:space-between}
     .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
     .logo-text{font-size:14px;font-weight:400;letter-spacing:0.03em;color:var(--ink)}
@@ -35,9 +36,6 @@
     .nav-cta:hover{background:var(--bg3)!important}
 
     .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 6rem;position:relative;overflow:hidden}
-    .vr{position:absolute;top:0;bottom:0;width:0.5px;background:linear-gradient(180deg,transparent,var(--border) 20%,var(--border) 80%,transparent);pointer-events:none;z-index:1}
-    .vr-l{left:calc(50% - 300px)}
-    .vr-r{right:calc(50% - 300px)}
     .hero-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:2}
 
     .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s ease forwards .15s}
@@ -126,7 +124,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#approach">Approach</a></li>
-      <li><a href="#company">Company</a></li>
+      <li><a href="careers.html">Careers</a></li>
       <li><a href="mailto:hello@lambdarobotics.com" class="nav-cta">Request Access</a></li>
     </ul>
   </div>
@@ -134,15 +132,8 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="vr vr-l"></div>
-  <div class="vr vr-r"></div>
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">
-        <div class="pulse-dot"></div>
-        <span>Autonomous Robotics — Stealth</span>
-        <!-- ✏️ REPLACE: your stage / one-liner -->
-      </div>
       <h1>Physical work,<br> <em>reimagined.</em></h1>
       <!-- ✏️ REPLACE: your headline -->
       <p class="hero-desc">
@@ -150,48 +141,13 @@
         We operate where software ends and the real world begins.
       </p>
       <!-- ✏️ REPLACE: your 2–3 sentence description -->
-      <div class="cta-row">
-        <a href="mailto:hello@lambdarobotics.com" class="btn-primary">Request Access</a>
-        <!-- ✏️ REPLACE: CTA text + link -->
-        <a href="#approach" class="btn-text">Our approach</a>
-      </div>
     </div>
 
     <div class="hero-visual">
-      <div class="ring-wrap">
-        <div class="ring"><div class="ring-dot"></div></div>
-        <div class="ring"><div class="ring-dot"></div></div>
-        <div class="ring"></div>
-        <div class="ring-center">
-          <img src="logo.png" alt="" style="width:48px;height:auto;opacity:0.15">
-        </div>
-      </div>
+      <img src="webpage.png" alt="" style="width:100%;max-width:480px;height:auto;border-radius:6px">
     </div>
   </div>
 </section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat">
-      <div class="stat-val">—</div>
-      <div class="stat-label">Key metric</div>
-      <!-- ✏️ REPLACE all 4 stats -->
-    </div>
-    <div class="stat">
-      <div class="stat-val">—</div>
-      <div class="stat-label">Key metric</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">—</div>
-      <div class="stat-label">Key metric</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">Seed</div>
-      <div class="stat-label">Stage</div>
-    </div>
-  </div>
-</div>
 
 <!-- APPROACH -->
 <section class="section" id="approach">
@@ -237,11 +193,11 @@
       <span>Lambda Robotics</span>
     </a>
     <ul class="foot-links">
-      <li><a href="#">Careers</a></li>
+      <li><a href="careers.html">Careers</a></li>
       <li><a href="#">Research</a></li>
       <li><a href="mailto:hello@lambdarobotics.com">Contact</a></li>
     </ul>
-    <div class="foot-copy">© 2025 Lambda Robotics</div>
+    <div class="foot-copy">© 2026 Lambda Robotics</div>
   </div>
 </footer>
 

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrical Engineer (Hiring at all Levels) — Lambda Robotics</title>
+  <link rel="icon" type="image/png" href="../logo.png" />
+  <meta name="description" content="Electrical Engineer — Lambda Robotics" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#ffffff;
+      --bg2:#e6e2db;
+      --bg3:#dedad2;
+      --ink:#181714;
+      --ink-mid:#6e6860;
+      --ink-dim:#b0a89e;
+      --border:rgba(24,23,20,0.07);
+      --border-mid:rgba(24,23,20,0.12);
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:'Geist',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    nav .inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-text{font-size:14px;font-weight:400;letter-spacing:0.03em;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{font-size:11px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-cta{color:var(--ink)!important;border:0.5px solid var(--border-mid)!important;padding:7px 20px;border-radius:2px;transition:background .2s!important}
+    .nav-cta:hover{background:var(--bg3)!important}
+
+    .wrap{max-width:760px;margin:0 auto;padding:0 2.5rem}
+
+    .back-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color .2s}
+    .back-link:hover{color:var(--ink-mid)}
+
+    .page-head{padding:160px 0 2.5rem}
+    .job-title-lg{font-family:'EB Garamond',serif;font-size:clamp(2rem,3.6vw,2.6rem);font-weight:400;line-height:1.15;letter-spacing:-.01em;color:var(--ink);margin:1.25rem 0 .75rem}
+    .job-meta-lg{font-size:13px;color:var(--ink-mid);font-weight:300}
+    .job-meta-lg .dot{margin:0 8px;color:var(--ink-dim)}
+
+    .job-body{padding-bottom:5rem}
+    .job-body h2{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin:2.5rem 0 1rem}
+    .job-body p{font-size:14px;line-height:1.85;color:var(--ink-mid);font-weight:300;margin-bottom:1rem}
+    .job-body ul{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+    .job-body li{font-size:14px;line-height:1.7;color:var(--ink-mid);font-weight:300;padding-left:1.2rem;position:relative}
+    .job-body li::before{content:'•';position:absolute;left:0;color:var(--ink-dim)}
+
+    .apply{border-top:0.5px solid var(--border);background:var(--bg2);padding:5rem 0}
+    .apply h2{font-family:'EB Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--ink);margin-bottom:.5rem}
+    .apply-desc{font-size:13px;color:var(--ink-mid);margin-bottom:2.5rem}
+    form{display:flex;flex-direction:column;gap:1.25rem}
+    .field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:.5rem}
+    .field input,.field textarea{width:100%;background:var(--bg);border:0.5px solid var(--border-mid);border-radius:3px;padding:12px 14px;font-family:'Geist',sans-serif;font-size:14px;color:var(--ink);font-weight:300}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--ink-dim)}
+    .field textarea{resize:vertical;min-height:110px}
+    .row-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    .field .hint{font-size:12px;line-height:1.6;color:var(--ink-mid);margin-bottom:.75rem;font-weight:300}
+    .toggle-group{display:inline-flex;border:0.5px solid var(--border-mid);border-radius:3px;overflow:hidden}
+    .toggle-group input{display:none}
+    .toggle-group label{padding:10px 28px;font-size:13px;color:var(--ink-mid);cursor:pointer;transition:background .2s,color .2s}
+    .toggle-group label:not(:last-of-type){border-right:0.5px solid var(--border-mid)}
+    .toggle-group input:checked + label{background:var(--ink);color:var(--bg)}
+    .file-drop{position:relative;border:1px dashed var(--border-mid);border-radius:4px;padding:2rem;text-align:center;background:var(--bg)}
+    .file-drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+    .file-btn{display:inline-flex;align-items:center;gap:8px;border:0.5px solid var(--ink);border-radius:20px;padding:9px 22px;font-size:13px;font-weight:500;color:var(--ink)}
+    .file-hint{display:block;font-size:12px;color:var(--ink-dim);margin-top:.75rem}
+    .btn-primary{align-self:flex-start;font-family:'Geist',sans-serif;font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--bg);background:var(--ink);border:none;padding:13px 32px;border-radius:2px;cursor:pointer;transition:opacity .2s,transform .15s;margin-top:.5rem}
+    .btn-primary:hover{opacity:.82;transform:translateY(-1px)}
+    .form-note{font-size:12px;color:var(--ink-dim);margin-top:1rem}
+
+    footer{border-top:0.5px solid var(--border)}
+    footer .inner{max-width:1080px;margin:0 auto;padding:1.75rem 2.5rem;display:flex;align-items:center;justify-content:space-between}
+    .foot-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .foot-logo span{font-size:13px;color:var(--ink-mid);letter-spacing:.04em}
+    .foot-links{display:flex;gap:2rem;list-style:none}
+    .foot-links a{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color .2s}
+    .foot-links a:hover{color:var(--ink-mid)}
+    .foot-copy{font-size:10px;color:var(--ink-dim);letter-spacing:.06em}
+
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .page-head{padding:120px 0 2rem}
+      .row-2{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="/" class="logo">
+      <img src="../logo.png" alt="Lambda Robotics" style="width:22px;height:auto;display:block">
+      <span class="logo-text">Lambda Robotics</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#approach">Approach</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="mailto:hello@lambdarobotics.com" class="nav-cta">Request Access</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <a href="/careers.html" class="back-link">← All positions</a>
+    <h1 class="job-title-lg">Electrical Engineer (Hiring at all Levels)</h1>
+    <div class="job-meta-lg">Engineering<span class="dot">•</span>NYC<span class="dot">•</span>Full time</div>
+  </div>
+</header>
+
+<section class="job-body">
+  <div class="wrap">
+    <p>Lambda Robotics builds autonomous systems for physical infrastructure. We're hiring Electrical Engineers at every level — from new grad to staff — to own the power, sensing, and wiring systems that keep our robots running in the field.</p>
+
+    <h2>What you'll do</h2>
+    <ul>
+      <li>Design power distribution, sensing, and signal systems for autonomous hardware.</li>
+      <li>Spec and select components, build schematics, and work through PCB layout with our manufacturing team.</li>
+      <li>Bring up and debug electrical systems on physical prototypes.</li>
+      <li>Work closely with controls and mechanical engineering on integrated hardware.</li>
+    </ul>
+
+    <h2>What we're looking for</h2>
+    <ul>
+      <li>Solid grounding in circuit design, power electronics, or embedded electrical systems.</li>
+      <li>Experience taking a board from schematic to bring-up on real hardware.</li>
+      <li>Comfortable working hands-on, not just in simulation or on paper.</li>
+      <li>Any level welcome — we care about fundamentals and the ability to ship.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="apply">
+  <div class="wrap">
+    <h2>Apply for this role</h2>
+    <p class="apply-desc">Tell us a bit about yourself. We read every application.</p>
+
+    <form action="https://formspree.io/f/xgojvglp" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="role" value="Electrical Engineer" />
+      <input type="hidden" name="_subject" value="New application — Electrical Engineer" />
+
+      <div class="row-2">
+        <div class="field">
+          <label for="name">Full name *</label>
+          <input type="text" id="name" name="name" placeholder="Type here..." required />
+        </div>
+        <div class="field">
+          <label for="preferred_name">Preferred name</label>
+          <input type="text" id="preferred_name" name="preferred_name" placeholder="Type here..." />
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="hello@example.com" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="1-415-555-1234" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="resume">Resume *</label>
+        <div class="file-drop">
+          <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+          <span class="file-btn">📎 Upload file</span>
+          <span class="file-hint">or drag and drop here</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="location">Location *</label>
+        <input type="text" id="location" name="location" placeholder="City, State" required />
+      </div>
+
+      <div class="field">
+        <label>Onsite work requirement *</label>
+        <p class="hint">This is a full-time, onsite role. Please confirm if you can meet this onsite requirement.</p>
+        <div class="toggle-group">
+          <input type="radio" id="onsite-yes" name="onsite_ok" value="Yes" required />
+          <label for="onsite-yes">Yes</label>
+          <input type="radio" id="onsite-no" name="onsite_ok" value="No" />
+          <label for="onsite-no">No</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>US work authorization *</label>
+        <p class="hint">Are you legally authorized to work in the United States?</p>
+        <div class="toggle-group">
+          <input type="radio" id="auth-yes" name="work_auth" value="Yes" required />
+          <label for="auth-yes">Yes</label>
+          <input type="radio" id="auth-no" name="work_auth" value="No" />
+          <label for="auth-no">No</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="linkedin">LinkedIn, GitHub, Google Scholar, or personal website</label>
+        <input type="url" id="linkedin" name="link" placeholder="https://" />
+      </div>
+
+      <div class="field">
+        <label for="message">Why this role?</label>
+        <textarea id="message" name="message" placeholder="A few sentences about your background and why you're interested."></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Submit application</button>
+      <p class="form-note">We'll get back to you within a few days.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <a href="/" class="foot-logo">
+      <img src="../logo.png" alt="" style="width:16px;height:auto;opacity:0.5">
+      <span>Lambda Robotics</span>
+    </a>
+    <ul class="foot-links">
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/#approach">Research</a></li>
+      <li><a href="mailto:hello@lambdarobotics.com">Contact</a></li>
+    </ul>
+    <div class="foot-copy">© 2026 Lambda Robotics</div>
+  </div>
+</footer>
+
+</body>
+</html>
