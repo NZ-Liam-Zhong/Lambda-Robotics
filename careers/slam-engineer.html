@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mechanical Engineer — Lambda Robotics</title>
+  <title>SLAM Engineer — Lambda Robotics</title>
   <link rel="icon" type="image/png" href="../logo.png" />
-  <meta name="description" content="Mechanical Engineer — Lambda Robotics" />
+  <meta name="description" content="SLAM Engineer — Lambda Robotics" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -109,29 +109,29 @@
 <header class="page-head">
   <div class="wrap">
     <a href="/careers.html" class="back-link">← All positions</a>
-    <h1 class="job-title-lg">Mechanical Engineer</h1>
-    <div class="job-meta-lg">Engineering<span class="dot">•</span> SF<span class="dot">•</span>Full time</div>
+    <h1 class="job-title-lg">SLAM Engineer</h1>
+    <div class="job-meta-lg">Engineering<span class="dot">•</span>SF<span class="dot">•</span>Full time<span class="dot">•</span>On-site</div>
   </div>
 </header>
 
 <section class="job-body">
   <div class="wrap">
-    <p>Lambda Robotics builds autonomous systems for physical infrastructure. As a Mechanical Engineer, you'll design the structures, actuation, and mechanisms that let our robots survive and operate in the real world.</p>
+    <p>Lambda Robotics builds autonomous systems for physical infrastructure. As a SLAM Engineer, you'll develop the mapping and localization systems that let our robots know exactly where they are and what's around them — in environments that weren't designed for robots.</p>
 
     <h2>What you'll do</h2>
     <ul>
-      <li>Design mechanical structures, actuation systems, and enclosures for field hardware.</li>
-      <li>Take designs from CAD through prototyping, fabrication, and field testing.</li>
-      <li>Work closely with electrical and controls engineering on integrated systems.</li>
-      <li>Iterate quickly based on what breaks in the field, not just on paper.</li>
+      <li>Build and maintain real-time SLAM pipelines for lidar, camera, and IMU sensor fusion.</li>
+      <li>Develop robust localization systems that work in dynamic, unstructured environments.</li>
+      <li>Optimize mapping and localization for compute and latency constraints on real hardware.</li>
+      <li>Work closely with perception and systems engineers to integrate SLAM into the full stack.</li>
     </ul>
 
     <h2>What we're looking for</h2>
     <ul>
-      <li>Strong fundamentals in mechanical design, materials, and manufacturing processes.</li>
-      <li>Experience with CAD tools and hands-on prototyping/fabrication.</li>
-      <li>Comfort iterating on physical hardware, not just simulation.</li>
-      <li>Bias toward shipping and iterating in the field.</li>
+      <li>Deep experience with SLAM algorithms — graph optimization, factor graphs, or learned approaches.</li>
+      <li>Strong background in sensor fusion across lidar, camera, and/or IMU.</li>
+      <li>Experience deploying localization on physical robots, not just in simulation.</li>
+      <li>Comfort with C++ and real-time systems.</li>
     </ul>
   </div>
 </section>
@@ -142,8 +142,8 @@
     <p class="apply-desc">Tell us a bit about yourself. We read every application.</p>
 
     <form action="https://formspree.io/f/xgojvglp" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="role" value="Mechanical Engineer" />
-      <input type="hidden" name="_subject" value="New application — Mechanical Engineer" />
+      <input type="hidden" name="role" value="SLAM Engineer" />
+      <input type="hidden" name="_subject" value="New application — SLAM Engineer" />
 
       <div class="row-2">
         <div class="field">
@@ -169,7 +169,7 @@
 
       <div class="field">
         <label for="resume">Resume *</label>
-        <div class="file-drop" id="file-drop">
+        <div class="file-drop">
           <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required onchange="document.getElementById('file-label').textContent=this.files[0]?this.files[0].name:'or drag and drop here'" />
           <span class="file-btn">📎 Upload file</span>
           <span class="file-hint" id="file-label">or drag and drop here</span>
