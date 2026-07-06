@@ -14,12 +14,13 @@
 :root{
   --bg:#000000;
   --bg2:#000000;
-  --bg3:#141414;
-  --ink:#f0ede8;
-  --ink-mid:#888480;
-  --ink-dim:#444240;
-  --border:rgba(255,255,255,0.07);
-  --border-mid:rgba(255,255,255,0.13);
+  --bg3:#131313;
+  --ink:#f5f2ec;
+  --ink-mid:#c7c2b9;
+  --ink-dim:#7a746a;
+  --accent:#cca86a;
+  --border:rgba(255,255,255,0.08);
+  --border-mid:rgba(255,255,255,0.16);
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Geist',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -36,19 +37,20 @@ nav .inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;height:58px;display:f
 .nav-cta:hover{background:var(--bg3)!important}
 @media(max-width:768px){.nav-links{display:none}}
 
-.wrap{max-width:820px;margin:0 auto;padding:0 2.5rem}
-.head{padding:160px 0 4rem}
-.head .tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:14px;margin-bottom:1.5rem}
+.wrap{max-width:820px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:1}
+.head{padding:160px 0 4rem;position:relative;overflow:hidden}
+.head::before{content:'';position:absolute;top:-20%;left:-10%;width:700px;height:500px;background:radial-gradient(ellipse at center,rgba(204,168,106,0.09),transparent 70%);pointer-events:none;z-index:-1}
+.head .tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:14px;margin-bottom:1.5rem}
 .head .tag::after{content:'';width:48px;height:0.5px;background:var(--ink-dim);opacity:.4}
-.head h1{font-family:'EB Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:400;color:var(--ink);letter-spacing:-.01em}
+.head h1{font-family:'EB Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:400;color:var(--ink);letter-spacing:-.01em;text-shadow:0 0 50px rgba(245,242,236,0.12)}
 
 .list{padding-bottom:8rem}
 .post{display:block;text-decoration:none;color:inherit;padding:2.25rem 0;border-top:0.5px solid var(--border)}
 .post:last-child{border-bottom:0.5px solid var(--border)}
-.post-eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:.75rem}
+.post-eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
 .post h2{font-family:'EB Garamond',serif;font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:.75rem;transition:color .2s}
 .post:hover h2{color:var(--ink-mid)}
-.post p{font-size:14px;line-height:1.75;color:var(--ink-mid);max-width:640px;margin-bottom:1rem}
+.post p{font-size:14px;line-height:1.75;color:var(--ink-mid);max-width:640px;margin-bottom:1rem;font-weight:400}
 .post .meta{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
 
 footer{border-top:0.5px solid var(--border);position:relative;z-index:2}
