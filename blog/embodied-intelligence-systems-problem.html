@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Embodied intelligence is a systems problem, not a model problem | Lambda Robotics</title>
 <link rel="icon" type="image/png" href="/logo.png" />
-<meta name="description" content="A robot that folds laundry for ten seconds is a model demo. A robot that clears a table, loads a dishwasher, and wipes the counters over ten minutes is a systems engineering problem." />
+<meta name="description" content="A model can produce a ten-second skill. A useful robot must hold a ten-minute task together. Why embodied intelligence is a systems problem, not a model problem." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -66,7 +66,7 @@ h1.a-title em{font-style:normal;color:var(--ink-mid)}
 .stat{padding:1.75rem 1rem 1.75rem 1.25rem;border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
 .stat-val{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:6px;letter-spacing:-.02em}
-.stat-label{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);line-height:1.5}
+.stat-label{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-mid);line-height:1.55}
 @media(max-width:768px){.stats-inner{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}}
 
 blockquote.pull{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:700;line-height:1.25;letter-spacing:-.02em;color:var(--ink);border-left:2px solid var(--ink);padding-left:1.75rem;margin:2.75rem 0}
@@ -93,6 +93,26 @@ blockquote.pull cite{display:block;font-family:'Space Mono',monospace;font-style
 .footnotes ol{padding-left:1.1rem;color:var(--ink-dim);font-size:12px;line-height:2}
 .footnotes a{color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--line-mid)}
 .footnotes a:hover{color:var(--ink)}
+
+.a-body ul{list-style:none;margin:1.1rem 0 1.6rem}
+.a-body ul li{font-size:14px;line-height:1.7;color:var(--ink-mid);padding-left:1.3rem;position:relative;margin-bottom:.3rem}
+.a-body ul li::before{content:'/';position:absolute;left:0;color:var(--ink-dim)}
+.a-body ul.two{display:grid;grid-template-columns:1fr 1fr;gap:.1rem 1.6rem}
+@media(max-width:600px){.a-body ul.two{grid-template-columns:1fr}}
+.eq{margin:2.1rem 0;padding:2rem 1.5rem;background:var(--bg3);border:1px solid var(--line);text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:1.5rem;color:var(--ink);line-height:1.5;overflow-x:auto;letter-spacing:.01em}
+.eq i{font-style:italic}
+.eq sub{font-size:.6em;vertical-align:-0.25em;letter-spacing:0}
+.eq sup{font-size:.6em;vertical-align:0.55em;letter-spacing:0}
+.eq .en{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);margin-top:1.2rem}
+.ladder{width:100%;border-collapse:collapse;margin:1.6rem 0 2.4rem}
+.ladder td{padding:13px 14px;border-bottom:1px solid var(--line);color:var(--ink)}
+.ladder td:first-child{color:var(--ink-mid);font-size:12.5px;font-family:'Space Mono',monospace;letter-spacing:.02em}
+.ladder td:last-child{text-align:right;font-family:Georgia,'Times New Roman',serif;font-size:1.3rem;color:var(--ink)}
+.ladder sup{font-size:.62em;vertical-align:0.5em}
+.pipeline{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:1.4rem 0 2rem;font-family:'Space Mono',monospace;font-size:11px}
+.pipeline .node{border:1px solid var(--line-mid);padding:6px 10px;color:var(--ink);white-space:nowrap}
+.pipeline .ar{color:var(--ink-dim)}
+.m{font-style:italic}
 
 footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem 26px}
 .foot-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
@@ -138,7 +158,7 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
       <div class="dot"></div>
       <span>July 2026</span>
       <div class="dot"></div>
-      <span>9 min read</span>
+      <span>7 min read</span>
     </div>
   </div>
 </section>
@@ -149,10 +169,10 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
       <div class="toc-label">Contents</div>
       <ol id="toc-list">
         <li><a href="#chore">The chore that breaks the demo</a></li>
-        <li><a href="#loop">The loop, not the model</a></li>
-        <li><a href="#bottlenecks">Where it actually breaks</a></li>
-        <li><a href="#flywheel">The flywheel needs a business</a></li>
-        <li><a href="#thesis">The thesis</a></li>
+        <li><a href="#internet">Physical intelligence has no internet</a></li>
+        <li><a href="#loop">The loop is the product</a></li>
+        <li><a href="#intervention">Intervention is the learning signal</a></li>
+        <li><a href="#thesis">The Lambda thesis</a></li>
       </ol>
     </div>
   </aside>
@@ -161,26 +181,85 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
 
     <div class="stats">
       <div class="stats-inner">
-        <div class="stat"><div class="stat-val">10–15 min</div><div class="stat-label">Longest publicly-demonstrated multi-stage home task, unseen kitchens &amp; bedrooms<sup><a href="#fn1">1</a></sup></div></div>
-        <div class="stat"><div class="stat-val">68 / 7</div><div class="stat-label">Tasks and robot platforms behind one leading cross-embodiment pretraining run<sup><a href="#fn1">1</a></sup></div></div>
-        <div class="stat"><div class="stat-val">50–100</div><div class="stat-label">Demonstrations to fine-tune a deployed model for a new task, once the base model exists<sup><a href="#fn4">4</a></sup></div></div>
-        <div class="stat"><div class="stat-val">100s</div><div class="stat-label">Home robot units live by end of 2025, each one funded by real subscriptions<sup><a href="#fn2">2</a></sup></div></div>
+        <div class="stat"><div class="stat-val">10–15 min</div><div class="stat-label">Duration of a publicly demonstrated multi-stage task in previously unseen environments</div></div>
+        <div class="stat"><div class="stat-val">68 tasks</div><div class="stat-label">Task diversity represented in one frontier cross-embodiment pretraining run</div></div>
+        <div class="stat"><div class="stat-val">7 platforms</div><div class="stat-label">Different embodiments represented in the same training run</div></div>
+        <div class="stat"><div class="stat-val">50–100</div><div class="stat-label">Reported demonstrations to specialize a strong base policy to a new task</div></div>
       </div>
     </div>
 
-    <p>In 2026 the benchmark everyone in embodied AI actually watches isn't a leaderboard score. It's whether a robot can walk into a kitchen it has never seen, clear the table, load the dishwasher, and wipe the counters, without a script, without a human quietly steering from another room. That's close to the exact task Physical Intelligence built its π0.5 model to attempt: a mobile manipulator cleaning kitchens and bedrooms in new homes absent from its training data, executing multi-stage routines that run ten to fifteen minutes<sup><a href="#fn1">1</a></sup>.</p>
+    <p>The figures above point at the real difficulty. General competence needs breadth across tasks and embodiments, and a strong base policy makes each new specialization cheaper.<sup><a href="#fn5">5</a></sup> But deployment is where the model stops being the whole story, and everything else in the system has to hold together at once.</p>
 
-    <p>Ten to fifteen minutes sounds unimpressive until you compare it to what actually goes viral. Most robot clips that circulate on Twitter are ten to fifteen <strong>seconds</strong>, a single skill, one pour, one fold, one pick, because a single skill is what today's models reliably do. A long-horizon chore is a different problem: dozens of correct decisions in sequence, clutter that's never arranged the same way twice, a dropped plate that has to be recovered from rather than fatal to the run. One wrong action in minute nine can erase eight minutes of otherwise flawless behavior. That gap, between a skill and a chore, is where most embodied AI roadmaps quietly stall.</p>
-
-    <p>The industry's reflexive explanation is that the gap will close with a bigger, better model. That's not wrong, but it's an incomplete frame. Treat it as a modeling problem and you'll keep shipping impressive single-skill demos. Treat it as a systems engineering problem, one where the model is a single stage in a much longer loop, and you start asking the questions that actually determine whether a robot can hold a chore together for ten minutes in someone else's kitchen.</p>
+    <blockquote class="pull">The model matters. But the loop is the product.</blockquote>
 
     <h2 id="chore"><span class="num">01</span>The chore that breaks the demo</h2>
 
-    <p>Every long-horizon failure we've seen traces back to a stage that got starved, not a model that got outsmarted: a data pipeline that never saw enough cluttered kitchens, a post-training run with no real recovery examples, a safety layer that vetoes the one action that would have saved the run, an onboard chip too slow to replan before the plate hits the floor. The model is real. It's also the easiest of the six stages to point a camera at, which is exactly why it gets credited, or blamed, for problems that live somewhere else in the loop.</p>
+    <p>Consider an illustrative ten-minute task with 40 decision points, where an unrecovered error ends the sequence. Let <span class="m">p</span> be the probability of succeeding at each decision point. Under the simplifying assumption that these outcomes are independent, the task completes without recovery with probability:</p>
 
-    <h2 id="loop"><span class="num">02</span>The loop, not the model</h2>
+    <div class="eq"><i>P</i><sub>task</sub> = <i>p</i><sup><i>n</i></sup><span class="en">n = number of failure-sensitive decisions</span></div>
 
-    <p>Strip the marketing language out of every serious embodied AI effort and the same six-stage loop shows up underneath, whether the team calls it that or not.</p>
+    <table class="ladder">
+      <tr><td>0.95 per decision</td><td>0.95<sup>40</sup> ≈ 13%</td></tr>
+      <tr><td>0.98 per decision</td><td>0.98<sup>40</sup> ≈ 45%</td></tr>
+      <tr><td>0.99 per decision</td><td>0.99<sup>40</sup> ≈ 67%</td></tr>
+    </table>
+
+    <p>A robot can therefore look nearly perfect when individual skills are evaluated in isolation and still fail most long-horizon tasks. And this model is optimistic: physical failures are rarely independent. A slightly misplaced object creates a harder grasp; a poor grasp changes its orientation; the new orientation makes insertion harder; the failed insertion moves the system into a state its training data barely covers. Errors compound through the state of the world. Every action changes the conditions under which the next one must succeed.</p>
+
+    <p>Even something as ordinary as inserting a connector is a pipeline, not a moment:</p>
+
+    <div class="pipeline">
+      <span class="node">identify</span><span class="ar">→</span>
+      <span class="node">localize</span><span class="ar">→</span>
+      <span class="node">orient</span><span class="ar">→</span>
+      <span class="node">approach</span><span class="ar">→</span>
+      <span class="node">contact</span><span class="ar">→</span>
+      <span class="node">align</span><span class="ar">→</span>
+      <span class="node">control force</span><span class="ar">→</span>
+      <span class="node">insert</span><span class="ar">→</span>
+      <span class="node">verify</span><span class="ar">→</span>
+      <span class="node">recover</span>
+    </div>
+
+    <p>A demonstration can end when the connector goes in. A deployed robot has to handle everything around that visible second:</p>
+
+    <ul class="two">
+      <li>the wrong approach angle</li>
+      <li>partial obstruction</li>
+      <li>calibration error</li>
+      <li>unexpected contact</li>
+      <li>insufficient insertion force</li>
+      <li>excessive insertion force</li>
+      <li>a failed verification signal</li>
+      <li>recovery after the first attempt</li>
+    </ul>
+
+    <p>So the central engineering question is not <em>can the robot perform the action?</em> It is: <strong>can the system maintain task coherence when actions are imperfect and the environment keeps changing?</strong><sup><a href="#fn3">3</a></sup> Homes make this easy to picture, but the same structure appears in laboratories, warehouses, data centers, workshops, and energy facilities. The objects change; the systems problem does not.</p>
+
+    <h2 id="internet"><span class="num">02</span>Physical intelligence has no internet</h2>
+
+    <p>Language models learned from an enormous record of what people chose to publish. Physical intelligence has no equivalent archive, and most physical competence was never written down at all.<sup><a href="#fn2">2</a></sup> Nobody records the exact force it takes to free a stuck latch, or the small corrective motion that saves an object as it starts to slip.</p>
+
+    <p>Michael Polanyi called this tacit knowledge: we know more than we can tell.<sup><a href="#fn1">1</a></sup> Physical skill lives in timing, touch, embodiment, and millions of small corrections humans perform without consciously explaining them. Text can describe the objective of a task. Video can show what happened from the outside. Neither automatically captures the full structure of physical action:</p>
+
+    <ul class="two">
+      <li>joint states</li>
+      <li>force and torque</li>
+      <li>contact events</li>
+      <li>sensor uncertainty</li>
+      <li>failed attempts</li>
+      <li>corrective motions</li>
+      <li>policy confidence</li>
+      <li>operator intervention</li>
+    </ul>
+
+    <p>A successful trajectory shows what worked once. A failed trajectory can reveal much more. The slip that was corrected is data. The grasp that was abandoned is data. The unexpected contact is data. The point where a human intervened is data. The difference between the planned action and the action that actually worked is data.</p>
+
+    <p>This is why physical experience cannot be treated as a static dataset collected once, before training. The space of arrangements, geometries, material properties, and failure modes is too large to enumerate in advance. The dataset has to keep growing after deployment: the system must act, encounter states absent from its original data, notice where its policy becomes unreliable, and learn from what happens next.</p>
+
+    <h2 id="loop"><span class="num">03</span>The loop is the product</h2>
+
+    <p>A deployed embodied system is best understood as a closed learning loop. Each stage produces a different output, and each can independently cap the performance of the whole.</p>
 
     <div class="loop">
       <div class="loop-track">
@@ -188,65 +267,76 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
         <span class="loop-arrow">→</span>
         <div class="loop-step"><span class="loop-num">02</span>Pretrain</div>
         <span class="loop-arrow">→</span>
-        <div class="loop-step"><span class="loop-num">03</span>Post-train<small>RL / fine-tune</small></div>
+        <div class="loop-step"><span class="loop-num">03</span>Post-train</div>
         <span class="loop-arrow">→</span>
-        <div class="loop-step"><span class="loop-num">04</span>Deploy<small>execution</small></div>
+        <div class="loop-step"><span class="loop-num">04</span>Deploy</div>
         <span class="loop-arrow">→</span>
-        <div class="loop-step"><span class="loop-num">05</span>Feedback</div>
+        <div class="loop-step"><span class="loop-num">05</span>Intervene</div>
+        <span class="loop-arrow">→</span>
+        <div class="loop-step"><span class="loop-num">06</span>Feedback</div>
       </div>
       <div class="loop-return">↺ and back into Data, the loop only compounds if this arrow actually closes</div>
       <div class="loop-cross">Cross-cutting every stage: <strong>hardware</strong> · <strong>simulation</strong> · <strong>safety</strong></div>
     </div>
 
-    <p><strong>Data collection</strong> is closer to a logistics operation than a research project. Physical Intelligence's base model was trained across seven robot platforms and sixty-eight tasks before it ever generalized to a new home<sup><a href="#fn1">1</a></sup>. 1X runs it as a live service: human teleoperators complete real household tasks through NEO robots today, and every one of those sessions is recorded, labeled demonstration data for tomorrow's autonomy<sup><a href="#fn2">2</a></sup>. Figure treats its own hardware line the same way, every humanoid that rolls off the BotQ manufacturing floor is, by design, also a data-collection node<sup><a href="#fn3">3</a></sup>.</p>
-
-    <p><strong>Pretraining</strong> is where cross-embodiment, cross-task data gets turned into a general policy, π0.5's architecture explicitly folds in data from other robots, high-level subtask labels, verbal instructions, and web data specifically to generalize past what any one home or one robot saw during training<sup><a href="#fn1">1</a></sup>. <strong>Post-training</strong> is the cheap-looking part that only stays cheap because the expensive part already happened: Google DeepMind's on-device Gemini Robotics model can reportedly be fine-tuned for a new task with as few as fifty to one hundred demonstrations, but only because a much larger base model already carries the general competence that small fine-tune is specializing<sup><a href="#fn4">4</a></sup>.</p>
-
-    <p><strong>Deployment</strong> is a real-time constraint problem as much as an intelligence problem: whatever runs onboard has to plan, act, and replan inside a robot's actual power and compute envelope, which is why an on-device model line exists as its own product rather than a compressed afterthought<sup><a href="#fn4">4</a></sup>. <strong>Feedback</strong> is what turns a deployed fleet back into training signal, failures, near-misses, and teleoperator interventions logged and routed back to stage one. Skip that stage and you have a static model that never improves after ship day, no matter how good stage two was.</p>
-
-    <h2 id="bottlenecks"><span class="num">03</span>Where it actually breaks</h2>
-
-    <p>The loop doesn't fail because one stage is missing a breakthrough. It fails because the six stages depend on each other, and a limitation in one silently caps what the others can achieve.</p>
-
     <table class="compare">
-      <tr><th>Stage</th><th>What it actually is</th><th>What starves it</th></tr>
-      <tr><td>Data</td><td>An operations problem, fleets of teleoperators or deployed robots generating labeled demonstrations</td><td>Too few real environments; data that's clean because it was staged, not lived-in</td></tr>
-      <tr><td>Pretraining</td><td>A compute and architecture problem, folding heterogeneous embodiments and tasks into one general policy</td><td>Data that's abundant but narrow, many hours of one task, not many tasks</td></tr>
-      <tr><td>Post-training</td><td>An RL and fine-tuning problem, specializing a general policy to a task or environment</td><td>A weak base model, so every deployment needs full retraining instead of a light touch</td></tr>
-      <tr><td>Deployment</td><td>A hardware and latency problem, planning and acting inside real power/compute limits</td><td>A model too heavy to run onboard in real time, however good it is offline</td></tr>
-      <tr><td>Feedback</td><td>A telemetry and ops problem, capturing failures and routing them back to training</td><td>No mechanism to close the loop, so the model never learns from its own deployment</td></tr>
-      <tr><td>Safety</td><td>A reasoning problem that sits across every other stage, vetoing actions before they execute</td><td>Safety bolted on after the fact instead of architected as its own layer</td></tr>
+      <tr><th>Stage</th><th>Required output</th><th>Common bottleneck</th></tr>
+      <tr><td>Data</td><td>Broad, informative physical experience</td><td>Too much repetition, too little variation</td></tr>
+      <tr><td>Pretraining</td><td>Transferable physical competence</td><td>Data that is large but narrow</td></tr>
+      <tr><td>Post-training</td><td>Reliable task specialization</td><td>Excessive task-specific data requirements</td></tr>
+      <tr><td>Deployment</td><td>Real-time physical execution</td><td>Latency, calibration drift, hardware wear</td></tr>
+      <tr><td>Intervention</td><td>Safe continuation after uncertainty</td><td>Slow takeover or poor recovery interface</td></tr>
+      <tr><td>Feedback</td><td>Field experience converted into learning</td><td>Failures logged but never retrained on</td></tr>
+      <tr><td>Safety</td><td>Prevention of unacceptable actions</td><td>Excessive vetoes make the robot unusable<sup><a href="#fn6">6</a></sup></td></tr>
     </table>
 
-    <p>Hardware decides what data can even be collected in the first place, you cannot label proprioceptive feedback a sensor never captured, which is the practical reason Figure chose to manufacture its own robots at scale rather than wait for enough third-party units to exist<sup><a href="#fn3">3</a></sup>. Safety decides what an RL policy is even allowed to try: you cannot let a home robot explore its action space by trial and error the way a game-playing agent does, which is why Gemini Robotics is built with an explicit reasoning layer that evaluates actions for safety before they execute, rather than hoping safety emerges from scale alone<sup><a href="#fn4">4</a></sup>. Neither problem is solved by a bigger transformer. Both are solved by treating them as first-class engineering disciplines with their own teams, their own failure modes, and their own budgets.</p>
+    <p>This is why model benchmarks alone are insufficient. A strong offline policy may be too slow under deployment constraints. A large dataset may contain almost no useful recovery examples. A teleoperator may rescue a task without the system ever recording why the rescue was needed. A fleet may generate valuable experience while the training pipeline takes months to return it. Every stage can silently limit the others.</p>
 
-    <blockquote class="pull">"A model that's brilliant in evaluation and unsafe in deployment isn't a smaller version of the problem. It's a different problem, being scored on the wrong axis."<cite>Lambda Robotics, Research</cite></blockquote>
+    <p><strong>Recovery changes the mathematics.</strong> The <span class="m">p</span><sup><span class="m">n</span></sup> model assumes every failed action ends the task. A real system should detect failure and recover. Let <span class="m">r</span> be the probability that the system recovers after an initial failure. The effective per-decision survival probability becomes:</p>
 
-    <h2 id="flywheel"><span class="num">04</span>The flywheel needs a business</h2>
+    <div class="eq"><i>p</i><sub>eff</sub> = <i>p</i> + (1 − <i>p</i>)<i>r</i><span class="en">and the task rate is (p<sub>eff</sub>)<sup>n</sup></span></div>
 
-    <p>Closing this loop once is a research result. Closing it repeatedly, at the pace competitors are closing it, costs real money, teleoperator hours, compute, hardware iteration, fleet maintenance, and that money has to come from somewhere more durable than a funding round timed to a demo video. The teams making visible progress on long-horizon tasks all made the same bet: anchor the loop in a real commercial scenario that pays for it to keep turning.</p>
+    <p>Suppose each action succeeds 95% of the time, but the system recovers from 80% of failures:</p>
 
-    <p>1X is explicit about this. Teleoperation isn't a stopgap while they wait for autonomy, it's the current business model, generating subscription revenue today while every session doubles as training data for tomorrow. As CEO Bernt Børnich has put it, if they don't have your data, they can't make the product better<sup><a href="#fn2">2</a></sup>. Figure's logic runs the same direction from the hardware side: more deployed units generate more data, which makes the model better, which justifies deploying more units, a flywheel that only turns because actual commercial pilots, not internal test rigs, are generating the usage<sup><a href="#fn3">3</a></sup>. And outside humanoids entirely, Amazon's DeepFleet model was trained on real operational data from the more than a million robots already working its warehouses, the least glamorous deployment in this entire essay, and the one with the largest, least curated dataset behind it<sup><a href="#fn5">5</a></sup>.</p>
+    <div class="eq"><i>p</i><sub>eff</sub> = 0.95 + (0.05)(0.80) = 0.99<span class="en">then 0.99<sup>40</sup> ≈ 67%, versus 13% with no recovery</span></div>
 
-    <p>The common thread is that none of this data comes from a demo performed for a camera. Curated demos produce curated data, clean lighting, cooperative objects, no real stakes if a run fails. The data that actually improves a long-horizon model, the dropped plate, the rearranged kitchen, the customer who moved the furniture, only shows up when a real customer with a real incentive is depending on the system and something goes wrong. Autonomous driving learned this a decade earlier: the value of a fleet's data was never a function of test-track laps, it was a function of real trips, driven for real reasons, by people who needed to get somewhere. Embodied AI is relearning the same lesson at the scale of a kitchen instead of a highway.</p>
+    <p>Recovery does not merely improve one skill. It changes the reliability of the entire sequence. The solution to <span class="m">p</span><sup><span class="m">n</span></sup> is not only to raise <span class="m">p</span>; it is to keep each error from terminating the task. The same logic applies to learning: a robot that ships and never learns from deployment is not a product, it is a snapshot. The variable that matters is not only today's policy quality, but the rate at which reality can improve the next policy.</p>
 
-    <h2 id="thesis"><span class="num">05</span>The thesis</h2>
+    <h2 id="intervention"><span class="num">04</span>Intervention is the learning signal</h2>
 
-    <p>Nobody is going to announce a model that single-handedly makes embodied intelligence work. It's going to get assembled, stage by stage, discipline by discipline, by teams willing to treat data pipelines, simulation, RL, hardware, deployment, and safety as equally load-bearing, and willing to find a real commercial scenario patient enough to fund the loop before the model is impressive enough to trend on its own.</p>
+    <p>Human intervention is often read as evidence that an autonomous system failed. That reading misses its technical value. An intervention marks the boundary of current capability with unusual precision. It tells the learning system: <em>this is the state where the policy became unreliable, and this is the action that moved the task forward.</em><sup><a href="#fn4">4</a></sup></p>
 
-    <p>That's the bet we're making too: pick the deployment that generates real, high-value, unglamorous data before you chase the demo that generates attention. The loop compounds either way. Only one version of it is still running in five years.</p>
+    <p>Random demonstrations mostly cover states humans already handle well. Interventions do the opposite: each one lands exactly where the current policy is weakest, pairing a hard state with the correction that resolved it. That is precisely the signal a policy needs to grow.</p>
 
-    <blockquote class="pull">"The robots that matter are the ones you never notice."<cite>Lambda Robotics</cite></blockquote>
+    <p>Repeated interventions reveal recurring failure modes. Recurring failure modes become curricula. Corrective trajectories become learned recoveries. Learned recoveries reduce future intervention. The autonomy boundary moves.</p>
+
+    <p>The goal is not simply to minimize intervention, which a system can achieve by attempting fewer hard tasks or failing silently. The objective is multi-dimensional: reduce human involvement while holding or increasing useful task completion.</p>
+
+    <div class="eq" style="font-size:1.05rem;letter-spacing:.02em">task completion ↑ &nbsp;·&nbsp; interventions / task ↓ &nbsp;·&nbsp; operator time / task ↓ &nbsp;·&nbsp; recovery ↑<span class="en">optimized together, not one at a time</span></div>
+
+    <p>Intervention is not outside the autonomy system. It is one of the mechanisms through which autonomy improves.</p>
+
+    <h2 id="thesis"><span class="num">05</span>The Lambda thesis</h2>
+
+    <p>Nobody is going to release one model that single-handedly solves embodied intelligence. It will be engineered by teams that treat the whole loop, from data and hardware to deployment and safety, as a single system rather than a stack of separate wins.</p>
+
+    <p>That is the thesis behind Lambda Robotics. We build systems that enter real environments, do useful work, recognize when they become unreliable, and get better from the experience they generate. We do not assume autonomy must be perfect before a robot can operate. Human assistance extends what the system can do today while generating the exact data required to move that boundary tomorrow.</p>
+
+    <p>Interventions become demonstrations. Demonstrations become learned recoveries. Learned recoveries become autonomous competence. The robots that matter will not be the ones that perform one flawless action for a camera. They will be the ones that stay useful through uncertainty, recover from failure, and become more capable every time they work.</p>
+
+    <blockquote class="pull">The model is where capability is represented. The loop is where capability is created.<cite>Lambda Robotics</cite></blockquote>
 
     <div class="footnotes">
-      <div class="footnotes-label">Sources</div>
+      <div class="footnotes-label">References</div>
       <ol>
-        <li id="fn1">Physical Intelligence, "π0.5: a Vision-Language-Action Model with Open-World Generalization", <a class="cite" href="https://www.pi.website/blog/pi05" target="_blank" rel="noopener">pi.website/blog/pi05</a></li>
-        <li id="fn2">1X Technologies NEO home deployment and teleoperation-to-autonomy strategy, <a class="cite" href="https://humansareobsolete.com/articles/1x-neo-home-humanoid-robot-deployment-december-14-2025" target="_blank" rel="noopener">humansareobsolete.com</a></li>
-        <li id="fn3">Figure AI, BotQ manufacturing scale-up and the Helix data flywheel, <a class="cite" href="https://ai2.work/blog/figure-botq-hits-one-robot-per-hour-in-24x-production-breakthrough" target="_blank" rel="noopener">ai2.work</a></li>
-        <li id="fn4">Google DeepMind, "Gemini Robotics On-Device brings AI to local robotic devices", <a class="cite" href="https://deepmind.google/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/" target="_blank" rel="noopener">deepmind.google</a></li>
-        <li id="fn5">Amazon, "Amazon deploys its one millionth robot", <a class="cite" href="https://www.aboutamazon.com/news/operations/amazon-million-robots-ai-foundation-model" target="_blank" rel="noopener">aboutamazon.com</a></li>
+        <li id="fn1">Polanyi, M. <em>The Tacit Dimension.</em> University of Chicago Press, 1966.</li>
+        <li id="fn2">Moravec, H. <em>Mind Children: The Future of Robot and Human Intelligence.</em> Harvard University Press, 1988.</li>
+        <li id="fn3">Brooks, R. "Intelligence Without Representation." <em>Artificial Intelligence,</em> 1991.</li>
+        <li id="fn4">Ross, S., Gordon, G. &amp; Bagnell, J. A. "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning." <em>AISTATS,</em> 2011.</li>
+        <li id="fn5">Sutton, R. "The Bitter Lesson." <em>Incomplete Ideas,</em> 2019.</li>
+        <li id="fn6">Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J. &amp; Mané, D. "Concrete Problems in AI Safety." <em>arXiv,</em> 2016.</li>
       </ol>
+      <p style="font-size:11px;line-height:1.7;color:var(--ink-dim);margin-top:1.25rem">Benchmark figures summarize publicly reported frontier embodied AI results from 2025. Organization names are omitted because the argument concerns the structure of the field, not a comparison between companies.</p>
     </div>
 
   </article>
