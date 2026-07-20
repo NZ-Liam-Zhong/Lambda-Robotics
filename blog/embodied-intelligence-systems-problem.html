@@ -65,7 +65,7 @@ h1.a-title em{font-style:normal;color:var(--ink-mid)}
 .stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{padding:1.75rem 1rem 1.75rem 1.25rem;border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
-.stat-val{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:6px;letter-spacing:-.02em}
+.stat-val{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:16px;letter-spacing:-.02em}
 .stat-label{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-mid);line-height:1.55}
 @media(max-width:768px){.stats-inner{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}}
 
@@ -77,12 +77,12 @@ blockquote.pull cite{display:block;font-family:'Space Mono',monospace;font-style
 .compare td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);color:var(--ink-mid);vertical-align:top;line-height:1.6}
 .compare td:first-child,.compare th:first-child{color:var(--ink);padding-left:0}
 
-.loop{margin:2.25rem 0 2.75rem;padding:2rem 1.75rem;border:1px solid var(--line-mid);background:var(--bg3)}
-.loop-track{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem;justify-content:center}
-.loop-step{border:1px solid var(--line-mid);background:var(--bg);padding:.75rem 1rem;text-align:center;font-size:12px;color:var(--ink);min-width:82px;line-height:1.35}
+.loop{margin:2.25rem 0 2.75rem;padding:1.5rem 1rem;border:1px solid var(--line-mid);background:var(--bg3)}
+.loop-track{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.loop-step{border:1px solid var(--line-mid);background:var(--bg);padding:.5rem .55rem;text-align:center;font-size:10.5px;color:var(--ink);min-width:0;line-height:1.3;white-space:nowrap}
 .loop-step small{display:block;color:var(--ink-dim);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
-.loop-num{display:block;font-family:'Space Mono',monospace;font-size:9.5px;color:var(--ink-dim);letter-spacing:.1em;margin-bottom:4px}
-.loop-arrow{color:var(--ink-dim);font-size:14px}
+.loop-num{display:block;font-family:'Space Mono',monospace;font-size:8.5px;color:var(--ink-dim);letter-spacing:.08em;margin-bottom:3px}
+.loop-arrow{color:var(--ink-dim);font-size:12px}
 .loop-return{text-align:center;font-size:11px;color:var(--ink-dim);margin-top:1.25rem;padding-top:1.1rem;border-top:1px dashed var(--line-mid)}
 .loop-cross{text-align:center;font-size:10.5px;color:var(--ink-dim);margin-top:.6rem;letter-spacing:.02em}
 .loop-cross strong{color:var(--ink-mid);font-weight:700}
@@ -179,6 +179,10 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
 
   <article class="a-body">
 
+    <p>The benchmark that actually matters in embodied AI isn't a leaderboard score. It's whether a robot can walk into an environment it has never seen, clear the table, load the dishwasher, and wipe the counters, with no script and no human steering from another room. The strongest public demonstrations now run ten to fifteen minutes in homes the robot was never trained on.</p>
+
+    <p>A single skill, one pour, one fold, one pick, is what today's models reliably do. A chore is a different problem: dozens of decisions in sequence, clutter that is never the same twice, a dropped plate that has to be recovered from rather than fatal to the run. One wrong action in minute nine can erase eight minutes of flawless behavior. That gap, between a skill and a chore, is where most roadmaps quietly stall.</p>
+
     <div class="stats">
       <div class="stats-inner">
         <div class="stat"><div class="stat-val">10–15 min</div><div class="stat-label">Duration of a publicly demonstrated multi-stage task in previously unseen environments</div></div>
@@ -188,7 +192,7 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
       </div>
     </div>
 
-    <p>The figures above point at the real difficulty. General competence needs breadth across tasks and embodiments, and a strong base policy makes each new specialization cheaper.<sup><a href="#fn5">5</a></sup> But deployment is where the model stops being the whole story, and everything else in the system has to hold together at once.</p>
+    <p>The reflexive answer is that a bigger model will close the gap.<sup><a href="#fn5">5</a></sup> That isn't wrong, but it is incomplete. Treat this as a modeling problem and you keep shipping single-skill demos. Treat it as a systems problem, where the model is one stage in a much longer loop, and you start asking what actually decides whether a robot can hold a chore together in someone else's kitchen.</p>
 
     <blockquote class="pull">The model matters. But the loop is the product.</blockquote>
 
@@ -312,7 +316,7 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
 
     <p>The goal is not simply to minimize intervention, which a system can achieve by attempting fewer hard tasks or failing silently. The objective is multi-dimensional: reduce human involvement while holding or increasing useful task completion.</p>
 
-    <div class="eq" style="font-size:1.05rem;letter-spacing:.02em">task completion ↑ &nbsp;·&nbsp; interventions / task ↓ &nbsp;·&nbsp; operator time / task ↓ &nbsp;·&nbsp; recovery ↑<span class="en">optimized together, not one at a time</span></div>
+    <div class="eq" style="font-size:0.92rem;letter-spacing:.01em">task&nbsp;completion&nbsp;↑ &nbsp;·&nbsp; interventions&nbsp;/&nbsp;task&nbsp;↓ &nbsp;·&nbsp; operator&nbsp;time&nbsp;/&nbsp;task&nbsp;↓ &nbsp;·&nbsp; recovery&nbsp;↑<span class="en">optimized together, not one at a time</span></div>
 
     <p>Intervention is not outside the autonomy system. It is one of the mechanisms through which autonomy improves.</p>
 
@@ -336,7 +340,7 @@ footer{border-top:1px solid var(--line);position:relative;z-index:2;padding:2rem
         <li id="fn5">Sutton, R. "The Bitter Lesson." <em>Incomplete Ideas,</em> 2019.</li>
         <li id="fn6">Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J. &amp; Mané, D. "Concrete Problems in AI Safety." <em>arXiv,</em> 2016.</li>
       </ol>
-      <p style="font-size:11px;line-height:1.7;color:var(--ink-dim);margin-top:1.25rem">Benchmark figures summarize publicly reported frontier embodied AI results from 2025. Organization names are omitted because the argument concerns the structure of the field, not a comparison between companies.</p>
+      <p style="font-size:11px;line-height:1.7;color:var(--ink-dim);margin-top:1.25rem">Benchmark figures summarize publicly reported frontier embodied AI results from 2025.</p>
     </div>
 
   </article>
